@@ -1,6 +1,16 @@
-[gd_scene format=3 uid="uid://4gb0l0dg8fx2"]
+[gd_scene format=4 uid="uid://4gb0l0dg8fx2"]
 
 [ext_resource type="PackedScene" uid="uid://c1ao4h4gke0dl" path="res://scenes/player.tscn" id="1_0x1uh"]
+[ext_resource type="Texture2D" uid="uid://dphhpef64o7vm" path="res://assets/cor_principal.png" id="2_gvrj3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feon7"]
+texture = ExtResource("2_gvrj3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
+
+[sub_resource type="TileSet" id="TileSet_0x1uh"]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_feon7")
 
 [node name="world01" type="Node2D" unique_id=1353103668]
 
@@ -67,10 +77,17 @@ offset_bottom = 1056.0
 text = "CASA 8"
 
 [node name="Polygon2D" type="Polygon2D" parent="casas" unique_id=1051050683]
-position = Vector2(1443.52, 385)
+position = Vector2(1399, 674)
 scale = Vector2(0.75322855, 1)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(93.57056, 47.98948, 89.58765, -99, -214.43689, -101.01052, -211.78162, 49)
+polygon = PackedVector2Array(88, 48, 87.999985, -96, -215.99998, -95.999985, -216, 48)
 
 [node name="player" parent="." unique_id=640426988 instance=ExtResource("1_0x1uh")]
 position = Vector2(1400, 680)
+collision_mask = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1241272126]
+position = Vector2(1399, 674)
+scale = Vector2(0.75322855, 1)
+tile_map_data = PackedByteArray("AAD0//L/AAAAAAAAAAD1//L/AAAAAAAAAAD2//L/AAAAAAAAAAD3//L/AAAAAAAAAAD4//L/AAAAAAAAAAAFAPL/AAAAAAAAAAAGAPL/AAAAAAAAAAAHAPL/AAAAAAAAAAAIAPL/AAAAAAAAAAAJAPL/AAAAAAAAAAAKAPL/AAAAAAAAAAD0//H/AAAAAAAAAAD0//D/AAAAAAAAAAD0/+//AAAAAAAAAAD0/+7/AAAAAAAAAAD1/+7/AAAAAAAAAAD1/+3/AAAAAAAAAAD1/+z/AAAAAAAAAAD1/+v/AAAAAAAAAAD1/+r/AAAAAAAAAAD2/+r/AAAAAAAAAAD3/+r/AAAAAAAAAAD4/+r/AAAAAAAAAAD5/+r/AAAAAAAAAAD6/+r/AAAAAAAAAAD7/+r/AAAAAAAAAAD8/+r/AAAAAAAAAAD9/+r/AAAAAAAAAAD+/+n/AAAAAAAAAAD//+n/AAAAAAAAAAAAAOn/AAAAAAAAAAABAOn/AAAAAAAAAAACAOn/AAAAAAAAAAADAOn/AAAAAAAAAAAEAOn/AAAAAAAAAAAFAOn/AAAAAAAAAAAGAOn/AAAAAAAAAAAHAOn/AAAAAAAAAAAIAOn/AAAAAAAAAAAJAOr/AAAAAAAAAAAJAOv/AAAAAAAAAAAJAOz/AAAAAAAAAAAJAO3/AAAAAAAAAAAKAO3/AAAAAAAAAAAKAO7/AAAAAAAAAAAKAO//AAAAAAAAAAAKAPD/AAAAAAAAAAAKAPH/AAAAAAAAAAALAPL/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_0x1uh")
